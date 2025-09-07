@@ -2,137 +2,192 @@
 @use "./mixins.scss" as *;
 
 @media screen and (max-width: 480px) {
-    body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-header{
-    color: #fff;
-    padding: 1rem;
-    clip-path: polygon(0px 0px, 100% 0px, 100% 90%, 50% 100%, 0px 90%);
-    height: 45vh;
+    header{
+        color: #fff;
+        padding: 1rem;
+        clip-path: polygon(0px 0px, 100% 0px, 100% 90%, 50% 100%, 0px 90%);
+        height: 45vh;
 
-    @include applyFlex(center, center, column);
-    
-    .bgVideo{
-        overflow: hidden;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        @include applyFlex(start, center, column);
-        iframe{
-            width: 185%;
-            height: 50vh;
-            pointer-events: none;
+        @include applyFlex(center, center, column);
+        
+        .bgVideo{
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            @include applyFlex(start, center, column);
+            iframe{
+                width: 185%;
+                height: 50vh;
+                pointer-events: none;
+            }
+        }
+
+        img{
+            width: 50%;
+            align-self: center;
+            margin-left: 1rem;
+            justify-self: flex-end;
+        }
+
+        nav{
+            margin-top: 1rem;
+            ul{
+                @include applyFlex(center, center, row);
+                gap: 2rem;
+                li{
+                    list-style: none;
+                }
+            }
+        }
+
+        .headerTitle{
+            align-self: center;
+            justify-self: center;
         }
     }
 
-    img{
-        width: 50%;
-        align-self: center;
-        margin-left: 1rem;
-        justify-self: flex-end;
+    main{
+        .aboutMe{
+            padding: 1rem;
+            box-shadow: $shadow-medium;
+            h1{
+                text-align: center;
+            }
+            img{
+                width: 50%;
+                border-radius: 1rem;
+                justify-self: center;
+            }
+            p{
+                text-align: center;
+                padding: 1rem;
+            }
+        }
+
     }
 
-    nav{
-        margin-top: 1rem;
-        ul{
-            @include applyFlex(center, center, row);
-            gap: 2rem;
-            li{
-                list-style: none;
+    .features{
+        color: $gray-dark;
+        padding: 1rem;
+        height: 70vh;
+
+        @include applyFlex(center, center, column);
+        .targetContainer{
+            height: 80%;
+        }
+        .targetCarousel {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        height: 100%;
+        margin: auto;
+        overflow: hidden;
+
+            .targetCarouselContainer {
+            height: 100%;
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            will-change: transform; // Optimiza animación
+            }
+
+            .targetCarouselItem {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 0.5rem;
+            border: 1px solid #fff;
+            }
+
+            .targetCarouselControls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            pointer-events: none;
+
+            button {
+                pointer-events: auto;
+                background-color: transparent;
+                border: none;
+                padding: 0.8rem 1rem;
+                font-size: 2rem;
+                cursor: pointer;
+                border-radius: 50%;
+                transition: background 0.3s ease;
+            }
+            
+            }
+
+            .planTarget {
+            @include applyFlex(center, center, column);
+            text-align: center;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+                // Efecto hover elegante
+                &:hover {
+                    transform: translateY(-6px);
+                    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+                }
+
+                // Overlay sutil sobre la imagen
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.15));
+                    z-index: 1;
+                }
+
+                h2, p {
+                    position: relative;
+                    z-index: 2;
+                    margin: 0.5rem 1rem;
+                }
+
+                h2 {
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    letter-spacing: 0.5px;
+                }
+
+                p {
+                    font-size: 1rem;
+                    opacity: 0.9;
+                    line-height: 1.4;
+                }
             }
         }
     }
 
-    .headerTitle{
-        align-self: center;
-        justify-self: center;
-    }
-}
-
-main{
-    .aboutMe{
+    footer{
+        @include applyFlex(center, center, row);
+        color: black;
         padding: 1rem;
-        box-shadow: $shadow-medium;
-        h1{
-            text-align: center;
-        }
-        img{
-            width: 50%;
-            border-radius: 1rem;
-            justify-self: center;
-        }
-        p{
-            text-align: center;
-            padding: 1rem;
-        }
+        height: 50%;
+        margin-top: 1rem;
+        border-top: 1px solid $gray-dark;
     }
-
-}
-
-.features{
-    color: $gray-dark;
-    padding: 1rem;
-    height: 70vh;
-
-    @include applyFlex(center, center, column);
-    
-    .targetCarousel {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: auto;
-    overflow: hidden;
-
-    .targetCarouselContainer {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-      will-change: transform; // Optimiza animación
-    }
-
-    .targetCarouselItem {
-      min-width: 100%;
-      box-sizing: border-box;
-      padding: 0.5rem;
-      border: 1px solid #fff;
-    }
-
-    .targetCarouselControls {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      pointer-events: none;
-
-      button {
-        pointer-events: auto;
-        background-color: transparent;
-        border: none;
-        padding: 0.8rem 1rem;
-        font-size: 2rem;
-        cursor: pointer;
-        border-radius: 50%;
-        transition: background 0.3s ease;
-      }
-      
-    }
-}
-}
-
-footer{
-    @include applyFlex(center, center, row);
-    color: black;
-    padding: 1rem;
-    height: 50%;
-    margin-top: 1rem;
-    border-top: 1px solid $gray-dark;
-}
 }

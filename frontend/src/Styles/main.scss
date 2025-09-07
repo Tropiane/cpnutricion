@@ -1,31 +1,8 @@
-//fuentes
-@use './__fuentes.scss';
-//general
-@use './styles.scss';
+@use "./colors.scss";
+@use './mixins.scss';
+@use "./font.scss";
+@use "./grids.scss";
 
-//responsive
-@use './display/__appResponsive.scss';
-@use './display/__headerResponsive.scss';
-@use './display/__mainResponsive.scss';
-@use './display/__footerResponsive.scss';
-@use './display/__fontResponsive.scss';
-@use './display/__pagesResponsive.scss';
-//grids
-@use './grids/__appGrid.scss';
-@use './grids/__headerGrid.scss';
-@use './grids/__mainGrid.scss';
-@use './grids/__footerGrid.scss';
-@use './grids/__targetGrid.scss';
-
-//animations
-@use './animations/__scroll.scss';
-
-//components
-@use './components/header/__header.scss';
-@use './components/main/_main.scss';
-@use './components/footer/_footer';
-@use './components/main/_targets.scss';
-@use './components/main/_target.scss';
-
-//pages
-@use './pages/__aboutUs';
+@use "./globalMobile.scss";
+@use "./globalDesktop.scss";
+@use "./globalTablet.scss";

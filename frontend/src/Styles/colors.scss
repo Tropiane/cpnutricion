@@ -1,0 +1,23 @@
+// Paleta de colores pastel para web de nutrición
+
+// Colores principales
+$red-pastel:    #F28B82; // Titulos
+$green-pastel:  #A8D5BA; // Naturaleza, botones
+$yellow-pastel: #F9E79F; // Vitalidad
+$orange-pastel: #F7C59F; // Calidez
+$blue-pastel:   #A7C7E7; // Equilibrio
+$white-soft:    #FFFDF9; // Fondo general
+
+// Colores de apoyo
+$gray-dark:     #444444; // Texto principal
+$gray-light:    #EAEAEA; // Bordes / fondos suaves
+
+// Sombras suaves (ideal para tarjetas, botones, headers)
+$shadow-light: 0 2px 6px rgba(0, 0, 0, 0.08);
+$shadow-medium: 0 -2px 52px #A8D5BA;
+$shadow-soft-colored: 0 4px 10px rgba(242, 139, 130, 0.25); // sombra rojiza pastel
+
+// Degradados pastel
+$gradient-red-orange: linear-gradient(135deg, $red-pastel, $orange-pastel);
+$gradient-green-yellow: linear-gradient(135deg, $green-pastel, $yellow-pastel);
+$gradient-blue-pink: linear-gradient(135deg, $blue-pastel, $red-pastel);

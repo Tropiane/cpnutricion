@@ -8,19 +8,19 @@ const planes: targetData[] = [
         id: 1,
         title: "Plan 1",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-        image: "/src/assets/white-plan.png"
+        image: "https://drive.google.com/thumbnail?id=11y1QA9SoNREY6EjQpZNOPBvZBEeNJo6v&sz=w1000"
     },
     {
         id: 2,
         title: "Plan 2",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-        image: "/src/assets/green-plan.png"
+        image: "https://drive.google.com/thumbnail?id=1wV3xwQhuxQu3x9ZTYcFI1SdF2nmwPk31&sz=w1000"
     },
     {
         id: 3,
         title: "Plan 3",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-        image: "/src/assets/orange-plan.png"
+        image: "https://drive.google.com/thumbnail?id=1rgIv_9HuttywpKEWaEku_9CasYy82ICr&sz=w1000"
     },
 ]
 

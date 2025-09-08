@@ -7,7 +7,7 @@ export const Header = () =>{
         <header>
             <BgVideo />
             <NavBar />
-            <img src="/src/assets/logo.png" alt="Image" className="logo" />
+            <img src="https://drive.google.com/thumbnail?id=1W5rMPo8n299qRZuR78PQxz_dw8Hpiprv&sz=w1000" alt="Image" className="logo" />
             <h1 className="nunito-bold-italic headerTitle">CPNutricion</h1>
         </header>
     )

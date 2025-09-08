@@ -23,7 +23,7 @@ export const NavBar = ()=>{
                 {
                     links.map((link) => (
                         <li key={link.id}>
-                            <a href={link.url} className="lato-thin-italic">{link.text}</a>
+                            <a href={link.url} className="lato-bold-italic">{link.text}</a>
                         </li>
                     ))
                 }

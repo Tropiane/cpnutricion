@@ -1,0 +1,85 @@
+@media screen and (max-width: 1024px) and (min-width: 481px) {
+    header {
+        height: 55vh;
+        padding: 2rem;
+
+        .bgVideo iframe {
+            width: 140%;
+            height: 55vh;
+        }
+
+        img {
+            width: 35%;
+            margin-left: 0;
+        }
+
+        nav ul {
+            gap: 3rem;
+        }
+
+        .headerTitle {
+            font-size: 2rem;
+            text-align: center;
+        }
+    }
+
+    main {
+        .aboutMe {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            padding: 2rem;
+
+            h1 {
+                grid-column: span 2;
+                font-size: 2rem;
+            }
+
+            img {
+                width: 80%;
+                justify-self: center;
+            }
+
+            p {
+                text-align: left;
+            }
+        }
+    }
+
+    .features {
+        padding: 2rem;
+
+        .targetContainer {
+            height: auto;
+        }
+
+        .targetCarousel {
+            width: 85vw;
+
+            .targetCarouselItem {
+                padding: 1rem;
+            }
+
+            .planTarget {
+                h2 {
+                    font-size: 1.8rem;
+                }
+
+                p {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2rem;
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+    }
+}

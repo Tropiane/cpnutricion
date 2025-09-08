@@ -8,8 +8,8 @@ export const PlanTarget = ({id, title, description, image}: targetData) => {
     return (
         <>
             <div key={id} className="planTarget" style={{backgroundImage: `url(${image})`}}>
-               <h2>{title}</h2>
-               <p>{description}</p>
+               <h2 className="nunito-bold-italic">{title}</h2>
+               <p className="lato-regular">{description}</p>
             </div>
         </>
     )

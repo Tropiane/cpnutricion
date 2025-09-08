@@ -1,12 +1,32 @@
-
+const links = [
+    {
+        id: 1,
+        url: "#",
+        text: "Inicio",
+    },
+    {
+        id: 2,
+        url: "#",
+        text: "Sobre Nosotros",
+    },
+    {
+        id: 3,
+        url: "#",
+        text: "Contacto",
+    },
+]
 
 export const NavBar = ()=>{
     return(
         <nav>
             <ul>
-                <li>NavLink</li>
-                <li>NavLink</li>
-                <li>NavLink</li>
+                {
+                    links.map((link) => (
+                        <li key={link.id}>
+                            <a href={link.url} className="lato-thin-italic">{link.text}</a>
+                        </li>
+                    ))
+                }
             </ul>
         </nav>
     )

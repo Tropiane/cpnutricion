@@ -11,8 +11,8 @@ export const Footer = () =>{
             <NavBar />
 
             <div className="socialMedia">
-                <TfiInstagram><a href="https://www.instagram.com/cpnutricion/"></a></TfiInstagram>
-                <IoLogoWhatsapp><a href="https://wa.me/099999999"></a></IoLogoWhatsapp>
+                <a href="https://www.instagram.com/cpnutricion/"><TfiInstagram></TfiInstagram></a>
+                <a href="https://wa.me/099999999"><IoLogoWhatsapp></IoLogoWhatsapp></a>
             </div>
         </footer>
     )

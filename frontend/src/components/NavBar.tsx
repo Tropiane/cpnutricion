@@ -7,7 +7,7 @@ const links = [
     {
         id: 2,
         url: "#",
-        text: "Sobre Nosotros",
+        text: "Sobre Mi",
     },
     {
         id: 3,

@@ -213,9 +213,13 @@
             display: flex;
             flex-direction: row;
             gap: 1rem;
-            svg{
-                height: auto !important;
-                width: 1.5rem !important;
+            a{
+                text-decoration: none;
+                color: $gray-dark;
+                svg{
+                    height: auto !important;
+                    width: 1.5rem !important;
+                }
             }
         }
     }

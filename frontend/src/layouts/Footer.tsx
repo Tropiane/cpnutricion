@@ -8,7 +8,7 @@ export const Footer = () =>{
     return (
         <footer>
             <h3 className="nunito-bold-italic">Montevideo - Uruguay</h3>
-            <NavBar />
+            <NavBar isFooter={true}/>
 
             <div className="socialMedia">
                 <a href="https://www.instagram.com/cpnutricion/"><TfiInstagram></TfiInstagram></a>

@@ -50,12 +50,11 @@ header{
 
     @media screen and (max-width: 480px) {
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, auto);
+        grid-template-columns: repeat(1 1fr);
+        grid-template-rows: repeat(2, auto);
         grid-template-areas: 
-        "nav"
-        "logo"
-        "text";
+        "logo nav"
+        "text text";
 
         nav{
             grid-area: nav;

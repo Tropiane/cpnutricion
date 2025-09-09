@@ -350,12 +350,20 @@ main .aboutMe p {
   }
   footer nav ul li {
     list-style: none;
-    text-align: center;
   }
   footer nav ul li a {
     text-decoration: none;
     color: #444444;
     font-size: 1.2rem;
+  }
+  footer .socialMedia {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  footer .socialMedia svg {
+    height: auto !important;
+    width: 1.5rem !important;
   }
 }
 @media screen and (max-width: 1024px) and (min-width: 481px) {

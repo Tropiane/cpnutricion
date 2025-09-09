@@ -199,13 +199,23 @@
             ul{
                 li{
                     list-style: none;
-                    text-align: center;
+
                     a{
                         text-decoration: none;
                         color: $gray-dark;
                         font-size: 1.2rem;
                     }
                 }
+            }
+        }
+
+        .socialMedia{
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            svg{
+                height: auto !important;
+                width: 1.5rem !important;
             }
         }
     }

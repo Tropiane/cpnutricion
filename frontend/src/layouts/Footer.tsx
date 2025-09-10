@@ -6,7 +6,7 @@ import { NavBar } from "../components/NavBar"
 
 export const Footer = () =>{
     return (
-        <footer>
+        <footer id="footer">
             <h3 className="nunito-bold-italic">Montevideo - Uruguay</h3>
             <NavBar isFooter={true}/>
 

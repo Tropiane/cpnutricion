@@ -8,12 +8,12 @@ const links = [
     },
     {
         id: 2,
-        url: "#",
+        url: "#about",
         text: "Sobre Mi",
     },
     {
         id: 3,
-        url: "#",
+        url: "#footer",
         text: "Contacto",
     },
 ]

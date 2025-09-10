@@ -23,7 +23,7 @@ const planes: targetData[] = [
         title: "Plan Transformación — “Crear paz con la comida”",
         description: "Para quienes desean transformar su relación con la alimentación desde el acompañamiento continuo, paso a paso, sin sacrificio y con mucho cuidado.",
         image: "https://drive.google.com/thumbnail?id=1rgIv_9HuttywpKEWaEku_9CasYy82ICr&sz=w1000",
-        details: ["Sesión inicial ampliada (75–90 min): escucha profunda, construcción de base sólida","6 seguimientos (una por semana, 30–45 min cada uno)","Planes ajustables mensuales (nutrición clínica, deportiva, vegana/vegetariana, salud ginecológica según necesidad)","Comunicación abierta entre sesiones para contención emocional, dudas o ajustes","Revisión anual o cierre con pautas para continuar por tu cuenta"]
+        details: ["Sesión inicial ampliada (75–90 min): construcción de base sólida","6 seguimientos (30–45 min cada uno)","Planes ajustables mensuales","Comunicación abierta entre sesiones para contención emocional, dudas o ajustes","Revisión anual o cierre con pautas para continuar por tu cuenta"]
     },
 ]
 

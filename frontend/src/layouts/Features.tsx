@@ -1,3 +1,4 @@
+import { StudyDetails } from "../components/StudyDetails"
 import { TargetContainer } from "../components/TargetContainer"
 
 export const Features = ()=>{
@@ -6,6 +7,8 @@ export const Features = ()=>{
             <h1 className="nunito-bold-italic">Planes</h1>
             
             <TargetContainer />
+
+            <StudyDetails />
         </section>
     )
 }

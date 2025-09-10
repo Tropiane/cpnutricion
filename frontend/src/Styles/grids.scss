@@ -5,6 +5,7 @@ body{
 }
 #root{
     display: grid;
+    gap: 3rem;
     animation: desplegar 1s ease-in;
     grid-template-rows: repeat(4, auto);
     min-height: 100vh;
@@ -89,9 +90,10 @@ main{
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, auto);
         grid-template-areas: 
-        "title"
         "img"
-        "text";
+        "title"
+        "text"
+        "details";
 
         h1{
             grid-area: title;
@@ -101,6 +103,9 @@ main{
         }
         p{
             grid-area: text;
+        }
+        ul{
+            grid-area: details;
         }
         }
     }

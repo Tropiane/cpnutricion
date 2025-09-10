@@ -72,6 +72,7 @@ body {
 
 #root {
   display: grid;
+  gap: 3rem;
   animation: desplegar 1s ease-in;
   grid-template-rows: repeat(4, auto);
   min-height: 100vh;
@@ -141,7 +142,7 @@ main .aboutMe p {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
-    grid-template-areas: "title" "img" "text";
+    grid-template-areas: "img" "title" "text" "details";
   }
   main .aboutMe h1 {
     grid-area: title;
@@ -151,6 +152,9 @@ main .aboutMe p {
   }
   main .aboutMe p {
     grid-area: text;
+  }
+  main .aboutMe ul {
+    grid-area: details;
   }
 }
 
@@ -240,25 +244,34 @@ main .aboutMe p {
     text-align: center;
   }
   main .aboutMe img {
-    width: 50%;
+    width: 70%;
     border-radius: 1rem;
     justify-self: center;
   }
   main .aboutMe p {
     text-align: center;
-    padding: 1rem;
+    border-bottom: 1px solid #444444;
+  }
+  main .aboutMe ul {
+    align-self: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+  main .aboutMe ul li {
+    list-style: none;
+    margin-top: 1rem;
   }
   .features {
     color: #444444;
     padding: 1rem;
-    height: 70vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
   .features .targetContainer {
-    height: 80%;
+    height: 40vh;
   }
   .features .targetCarousel {
     position: relative;
@@ -340,6 +353,33 @@ main .aboutMe p {
   .features .targetCarousel .planTarget ul li {
     list-style: circle;
     font-size: 1.2rem;
+  }
+  .features .studyDetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: max-content;
+    width: 100%;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .features .studyDetails .studyDetailTarget {
+    height: max-content;
+  }
+  .features .studyDetails .studyDetailTarget details {
+    margin-top: 1rem;
+  }
+  .features .studyDetails .studyDetailTarget details summary {
+    list-style: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+  }
+  .features .studyDetails .studyDetailTarget details p {
+    padding: 1rem;
+    line-height: 1.4;
   }
   footer {
     display: flex;

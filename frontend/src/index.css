@@ -234,8 +234,7 @@ main .aboutMe p {
     border-bottom: 1px solid #fff;
   }
   header .headerTitle {
-    align-self: center;
-    justify-self: center;
+    text-align: center;
   }
   main .aboutMe {
     padding: 1rem;

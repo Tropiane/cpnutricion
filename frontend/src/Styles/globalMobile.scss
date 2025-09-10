@@ -67,8 +67,7 @@
         }
 
         .headerTitle{
-            align-self: center;
-            justify-self: center;
+            text-align: center;
         }
     }
 
@@ -197,7 +196,6 @@
                 
                 ul{
                     align-self: flex-start;
-                    
                     li{
                         list-style: circle;
                         margin-top: .1rem;

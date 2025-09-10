@@ -263,7 +263,7 @@ main .aboutMe p {
   .features {
     color: #444444;
     padding: 1rem;
-    height: 100vh;
+    height: max-content;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -271,7 +271,7 @@ main .aboutMe p {
     flex-direction: column;
   }
   .features .targetContainer {
-    height: 60vh;
+    height: 61vh;
   }
   .features .targetCarousel {
     position: relative;
@@ -289,6 +289,7 @@ main .aboutMe p {
   }
   .features .targetCarousel .targetCarouselItem {
     min-width: 100%;
+    height: 100%;
     box-sizing: border-box;
     padding: 0.5rem;
     border: 1px solid #fff;
@@ -354,7 +355,7 @@ main .aboutMe p {
   }
   .features .targetCarousel .planTarget ul li {
     list-style: circle;
-    margin-top: 0.5rem;
+    margin-top: 0.1rem;
     font-size: 1rem;
     color: black;
     line-height: 1.4;

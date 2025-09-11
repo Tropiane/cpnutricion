@@ -1,20 +1,56 @@
+@use "./colors.scss" as *;
+@use "./mixins.scss" as *;
 @media screen and (max-width: 1024px) and (min-width: 481px) {
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
     header {
-        height: 55vh;
+        height: 55dvh;
         padding: 2rem;
-
-        .bgVideo iframe {
-            width: 140%;
-            height: 55vh;
+        .bgVideo{
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            @include applyFlex(start, center, column);
+            iframe{
+                width: 185%;
+                height: 50dvh;
+                pointer-events: none;
+            }
         }
 
         img {
-            width: 35%;
+            width: 40%;
             margin-left: 0;
+            justify-self: center;
+            align-self: flex-start;
         }
 
-        nav ul {
-            gap: 3rem;
+        nav{
+            margin-top: 2rem;
+            ul{
+                gap: 3rem;
+                @include applyFlex(center, center, row);
+                li{
+                    list-style: none;
+                    a{
+                        text-decoration: none;
+                        color: $white-soft;
+                        border-bottom: 1px solid #fff;
+                    }
+                    &:hover{
+                        transition: .2s;
+                        transform: scale(1.1);
+                    }
+                }
+            }
         }
 
         .headerTitle {
@@ -30,34 +66,65 @@
             gap: 1.5rem;
             padding: 2rem;
 
-            h1 {
+            h2 {
                 grid-column: span 2;
-                font-size: 2rem;
+                font-size: 1.5rem;
+                align-self: center;
             }
 
             img {
-                width: 80%;
+                width: 100%;
                 justify-self: center;
             }
-
-            p {
-                text-align: left;
+            p{
+                text-align: center;
+                padding: 1rem;
+                border-bottom: 1px solid $gray-dark;
+                justify-self: center;
+                align-self: self-start;
+            }
+            ul{
+                align-self: flex-start;
+                margin: 0;
+                padding: 0;
+                li{
+                    list-style: none;
+                    margin-top: 1rem;
+                }
             }
         }
     }
 
     .features {
-        padding: 2rem;
+        @include applyFlex(center, center, column);
+        h1 {
+            font-size: 2rem;
+        }
 
         .targetContainer {
             height: auto;
         }
 
         .targetCarousel {
-            width: 85vw;
+            width: 85dvw;
 
-            .targetCarouselItem {
+            .targetCarouselControls {
+                display: none;
+            }
+            .planTarget {
+                margin: 0;
                 padding: 1rem;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                border-radius: 1rem;
+                margin-top: 1rem;
+                transition: .2s;
+                &:hover{
+                    transition: .2s;
+                    transform: scale(1.05);
+                    box-shadow: $shadow-medium;
+                }
             }
 
             .planTarget {
@@ -70,16 +137,63 @@
                 }
             }
         }
+
+        .studyDetails{
+            padding: 2rem;
+            h2{
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .studyDetailsTargets{
+                .studyDetailTarget{
+                    details{
+                        margin-top: 1rem;
+                        summary{
+                            font-size: 1.5rem;
+                            padding: 1rem;
+                            list-style: none;
+                            cursor: pointer;
+                            border-radius: 1rem;
+                            text-align: center;
+                            transition: .2s;
+                            &:hover{
+                                transition: .2s;
+                                transform: scale(.97);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     footer {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 2rem;
+        @include applyFlex(center, center, column);
 
-        nav ul {
+        nav{
+            ul{
             display: flex;
             gap: 2rem;
+            li{
+                list-style: none;
+                    a{
+                        text-decoration: none;
+                        color: $gray-dark;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+
+        .socialMedia{
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            svg{
+                color: $gray-dark;
+                font-size: 2rem;
+            }
         }
     }
 }

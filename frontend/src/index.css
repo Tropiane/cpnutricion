@@ -93,20 +93,39 @@ body {
   grid-area: footer;
 }
 
-header {
-  display: grid;
-  grid-template-columns: repeat(2 1fr);
-  grid-template-rows: repeat(2, auto);
-  grid-template-areas: "nav logo" "text text";
+@media screen and (min-width: 1025px) {
+  header {
+    display: grid;
+    grid-template-columns: repeat(2 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "nav logo" "text text";
+  }
+  header nav {
+    grid-area: nav;
+  }
+  header .logo {
+    grid-area: logo;
+  }
+  header .headerTitle {
+    grid-area: text;
+  }
 }
-header nav {
-  grid-area: nav;
-}
-header .logo {
-  grid-area: logo;
-}
-header .headerTitle {
-  grid-area: text;
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  header {
+    display: grid;
+    grid-template-columns: repeat(2 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "nav logo" "text text";
+  }
+  header nav {
+    grid-area: nav;
+  }
+  header .logo {
+    grid-area: logo;
+  }
+  header .headerTitle {
+    grid-area: text;
+  }
 }
 @media screen and (max-width: 480px) {
   header {
@@ -126,16 +145,41 @@ header .headerTitle {
   }
 }
 
-main .aboutMe {
-  display: grid;
-  grid-template-columns: repeat(2 1fr);
-  grid-template-areas: "text img";
+@media screen and (min-width: 1025px) {
+  main .aboutMe {
+    display: grid;
+    grid-template-columns: repeat(2 1fr);
+    grid-template-areas: "text img";
+  }
+  main .aboutMe img {
+    grid-area: img;
+  }
+  main .aboutMe p {
+    grid-area: text;
+  }
 }
-main .aboutMe img {
-  grid-area: img;
-}
-main .aboutMe p {
-  grid-area: text;
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  main .aboutMe {
+    display: grid;
+    grid-template-columns: repeat(2 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "img title" "img text" "details secondTitle";
+  }
+  main .aboutMe h2 {
+    grid-area: title;
+  }
+  main .aboutMe img {
+    grid-area: img;
+  }
+  main .aboutMe p {
+    grid-area: text;
+  }
+  main .aboutMe ul {
+    grid-area: details;
+  }
+  main .aboutMe h3 {
+    grid-area: secondTitle;
+  }
 }
 @media screen and (max-width: 480px) {
   main .aboutMe {
@@ -429,20 +473,61 @@ main .aboutMe p {
   }
 }
 @media screen and (max-width: 1024px) and (min-width: 481px) {
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
   header {
-    height: 55vh;
+    height: 55dvh;
     padding: 2rem;
   }
+  header .bgVideo {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+  }
   header .bgVideo iframe {
-    width: 140%;
-    height: 55vh;
+    width: 185%;
+    height: 50dvh;
+    pointer-events: none;
   }
   header img {
-    width: 35%;
+    width: 40%;
     margin-left: 0;
+    justify-self: center;
+    align-self: flex-start;
+  }
+  header nav {
+    margin-top: 2rem;
   }
   header nav ul {
     gap: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  header nav ul li {
+    list-style: none;
+  }
+  header nav ul li a {
+    text-decoration: none;
+    color: #FFFDF9;
+    border-bottom: 1px solid #fff;
+  }
+  header nav ul li:hover {
+    transition: 0.2s;
+    transform: scale(1.1);
   }
   header .headerTitle {
     font-size: 2rem;
@@ -454,28 +539,63 @@ main .aboutMe p {
     gap: 1.5rem;
     padding: 2rem;
   }
-  main .aboutMe h1 {
+  main .aboutMe h2 {
     grid-column: span 2;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    align-self: center;
   }
   main .aboutMe img {
-    width: 80%;
+    width: 100%;
     justify-self: center;
   }
   main .aboutMe p {
-    text-align: left;
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid #444444;
+    justify-self: center;
+    align-self: self-start;
+  }
+  main .aboutMe ul {
+    align-self: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+  main .aboutMe ul li {
+    list-style: none;
+    margin-top: 1rem;
   }
   .features {
-    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .features h1 {
+    font-size: 2rem;
   }
   .features .targetContainer {
     height: auto;
   }
   .features .targetCarousel {
-    width: 85vw;
+    width: 85dvw;
   }
-  .features .targetCarousel .targetCarouselItem {
+  .features .targetCarousel .targetCarouselControls {
+    display: none;
+  }
+  .features .targetCarousel .planTarget {
+    margin: 0;
     padding: 1rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    transition: 0.2s;
+  }
+  .features .targetCarousel .planTarget:hover {
+    transition: 0.2s;
+    transform: scale(1.05);
+    box-shadow: 0 -2px 52px #A8D5BA;
   }
   .features .targetCarousel .planTarget h2 {
     font-size: 1.8rem;
@@ -483,14 +603,55 @@ main .aboutMe p {
   .features .targetCarousel .planTarget p {
     font-size: 1.1rem;
   }
-  footer {
-    flex-direction: row;
-    justify-content: space-between;
+  .features .studyDetails {
     padding: 2rem;
+  }
+  .features .studyDetails h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .features .studyDetails .studyDetailsTargets .studyDetailTarget details {
+    margin-top: 1rem;
+  }
+  .features .studyDetails .studyDetailsTargets .studyDetailTarget details summary {
+    font-size: 1.5rem;
+    padding: 1rem;
+    list-style: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    text-align: center;
+    transition: 0.2s;
+  }
+  .features .studyDetails .studyDetailsTargets .studyDetailTarget details summary:hover {
+    transition: 0.2s;
+    transform: scale(0.97);
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
   footer nav ul {
     display: flex;
     gap: 2rem;
+  }
+  footer nav ul li {
+    list-style: none;
+  }
+  footer nav ul li a {
+    text-decoration: none;
+    color: #444444;
+    font-size: 1.2rem;
+  }
+  footer .socialMedia {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  footer .socialMedia svg {
+    color: #444444;
+    font-size: 2rem;
   }
 }
 /* Desktop */

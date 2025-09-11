@@ -25,7 +25,7 @@ export const NavBar = ({isFooter} : {isFooter?: boolean})=>{
         return(
             <nav>
                 <details>
-                    <summary><RxHamburgerMenu /></summary>
+                    <summary className="lato-bold-italic">Menú<RxHamburgerMenu /></summary>
                     <ul>
                         {
                             links.map((link) => (

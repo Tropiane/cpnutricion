@@ -31,11 +31,13 @@
         }
 
         img{
-            width: 50%;
+            width: 40%;
             align-self: flex-start;
             justify-self: flex-start;
             margin-top: 2rem;
             margin-left: 1rem;
+            border-radius: 1rem;
+            background-color: #ffffff57;
         }
 
         nav{
@@ -43,8 +45,11 @@
             justify-self: center;
             align-self: center;
             summary{
+                @include applyFlex(center, center, row);
+                gap: 1rem;
                 position: static;
                 list-style: none;
+                
                 cursor: pointer;
                 svg{
                     color: black;
@@ -59,7 +64,7 @@
                     list-style: none;
                     a{
                         text-decoration: none;
-                        color: $gray-dark;
+                        color: $white-soft;
                         border-bottom: 1px solid #fff;
                     }
                 }

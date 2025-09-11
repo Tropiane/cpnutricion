@@ -197,11 +197,13 @@ main .aboutMe p {
     pointer-events: none;
   }
   header img {
-    width: 50%;
+    width: 40%;
     align-self: flex-start;
     justify-self: flex-start;
     margin-top: 2rem;
     margin-left: 1rem;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.3411764706);
   }
   header nav {
     margin-top: 1rem;
@@ -209,6 +211,11 @@ main .aboutMe p {
     align-self: center;
   }
   header nav summary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
     position: static;
     list-style: none;
     cursor: pointer;
@@ -230,7 +237,7 @@ main .aboutMe p {
   }
   header nav ul li a {
     text-decoration: none;
-    color: #444444;
+    color: #FFFDF9;
     border-bottom: 1px solid #fff;
   }
   header .headerTitle {

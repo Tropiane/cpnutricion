@@ -695,8 +695,8 @@ body {
   }
   header .bgVideo iframe {
     clip-path: polygon(0px 0px, 100% 0px, 100% 90%, 50% 100%, 0px 90%);
-    min-width: 180%;
-    min-height: 70dvh;
+    min-width: 280%;
+    min-height: 120dvh;
     pointer-events: none;
   }
   header nav {
@@ -746,9 +746,9 @@ body {
     text-align: center;
   }
   main .aboutMe img {
-    width: 100%;
+    width: 60%;
     border-radius: 1rem;
-    justify-self: end;
+    justify-self: start;
   }
   main .aboutMe p {
     text-align: center;

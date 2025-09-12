@@ -94,14 +94,27 @@ main{
         .aboutMe{
         display: grid;
         grid-template-columns: repeat(2 1fr);
+        grid-template-rows: repeat(4, auto);
         grid-template-areas: 
-        "text img";
+        "img title"
+        "img text"
+        "img secondTitle"
+        "img details";
 
+        h2{
+            grid-area: title;
+        }
         img{
             grid-area: img;
         }
         p{
             grid-area: text;
+        }
+        ul{
+            grid-area: details;
+        }
+        h3{
+            grid-area: secondTitle;
         }
     }
     }

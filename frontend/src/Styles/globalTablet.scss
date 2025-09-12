@@ -20,8 +20,9 @@
             z-index: -1;
             @include applyFlex(start, center, column);
             iframe{
-                width: 185%;
-                height: 50dvh;
+                clip-path: polygon(0px 0px, 100% 0px, 100% 90%, 50% 100%, 0px 90%);
+                min-width: 180%;
+                min-height: 60dvh;
                 pointer-events: none;
             }
         }

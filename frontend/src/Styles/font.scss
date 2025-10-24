@@ -1,65 +1,60 @@
-.lato-thin {
-  font-family: "Lato", sans-serif;
-  font-weight: 100;
-  font-style: normal;
+.fontNav{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-decoration: none;
 }
 
-.lato-light {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  font-style: normal;
+.textFont{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
 }
 
-.lato-regular {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+.titleFont{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 4rem;
 }
 
-.lato-thin-italic {
-  font-family: "Lato", sans-serif;
-  font-weight: 100;
-  font-style: italic;
+.secondTitleFont{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 3.2rem;
 }
 
-.lato-light-italic {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  font-style: italic;
+.thirdTitleFont{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
 }
 
-.lato-regular-italic {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-style: italic;
+.fourthTitleFont{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
 }
 
-.lato-bold-italic {
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
-  font-style: italic;
+.linkFont{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
 }
 
-.lato-black-italic {
-  font-family: "Lato", sans-serif;
-  font-weight: 900;
-  font-style: italic;
+.buttonFont{
+    font-family: 'Nunito', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
 }
 
-.nunito-regular {
-  font-family: "Nunito", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+.listFont{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
 }
 
-.nunito-bold-italic {
-  font-family: "Nunito", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.nunito-bold {
-  font-family: "Nunito", sans-serif;
-  font-weight: 700;
-  font-style: normal;
+.spanFont{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
 }

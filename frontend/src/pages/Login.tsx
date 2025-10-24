@@ -1,7 +1,6 @@
 import { useState } from "react"
-import { login } from "../../utils/backendUserConnection";
-import { showLoginAlert } from "../../utils/alerts";
-
+import { showLoginAlert } from "../utils/alerts";
+import { login } from "../utils/backendUserConnection";
 
 export const Login = ()=>{
     const [formData, setFormData] = useState({

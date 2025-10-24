@@ -101,9 +101,8 @@
                 text-align: center;
             }
         }
-    }
 
-    .features{
+        .features{
         width: 100dvw;
         @include applyFlex(center, center, column);
         .targetContainer{
@@ -149,6 +148,9 @@
             }
 
         }
+    }
+
+    
 
         .studyDetails{
             margin-top: 2rem;
@@ -178,7 +180,6 @@
                 }
             }
         }
-        
     }
 
     footer{
@@ -210,6 +211,46 @@
                 font-size: 2rem;
                 &:hover{
                     color: $green-dark;
+                }
+            }
+        }
+    }
+
+    .login{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            width: 50%;
+            input{
+                width: 50%;
+                padding: 1rem;
+                border-radius: 1rem;
+                border: 1px solid $gray-dark;
+                outline: none;
+                font-size: 1.6rem;
+                color: $gray-dark;
+            }
+
+            button{
+                width: 50%;
+                padding: 1rem;
+                border-radius: 1rem;
+                border: none;
+                background-color: $green-dark;
+                color: $white-soft;
+                font-size: 1.6rem;
+                cursor: pointer;
+                transition: .1s;
+                &:hover{
+                    transition: .2s;
+                    transform: scale(.97);
                 }
             }
         }

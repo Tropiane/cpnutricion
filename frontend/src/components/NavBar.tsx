@@ -3,7 +3,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 const links = [
     {
         id: 1,
-        url: "#",
+        url: "/",
         text: "Inicio",
     },
     {
@@ -16,6 +16,11 @@ const links = [
         url: "#footer",
         text: "Contacto",
     },
+    {
+        id:4,
+        url: "/login",
+        text: "Acceso de Admin",
+    }
 ]
 
 export const NavBar = ({isFooter} : {isFooter?: boolean})=>{

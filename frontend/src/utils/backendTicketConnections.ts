@@ -1,3 +1,5 @@
+import { connection } from "./axiosConnection";
+
 interface Ticket{
     formId?: number,
     name: string,
@@ -6,75 +8,68 @@ interface Ticket{
     description: string
 }
 
-const API_URL = import.meta.env.VITE_TICKET_API;
-
 async function getTickets(): Promise<Ticket[]>{
-    const res = await fetch(API_URL, {
-        credentials: "include"
-    });
+    try {
+        const res = await connection.get('form');
 
-    if(!res.ok){
-        throw new Error("Error al recuperar los tickets")
-    };
+        if(!res) return([]);
 
-    return res.json();
+        return res.data as Ticket[]
+    } catch (error) {
+        console.log(error);
+        return [];
+    }
 }
 
 async function createTicket(ticket: Ticket): Promise<Ticket[]>{
-    const res = await fetch(API_URL, {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(ticket)
-    })
+    try {
+        const res = await connection.post('form', ticket);
+        if (!res) return([]);
 
-    if(res.ok){
-        throw new Error("Error generando el nuevo ticket")
+        return res.data as Ticket[];
+    } catch (error) {
+        console.log(error);
+        return[]
     }
-
-    return res.json()
 }
 
 async function addTicketComment(id:number, comment: string) {
-    const res = await fetch(API_URL, {
-        method: "PATCH",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({id, comment})
-    })
+    try {
+        const res = await connection.patch('form', {id, comment});
 
-    if(!res.ok){
-        throw new Error("Error generando ticket")
-    };
+        if(!res) return;
 
-    return res.json();
+        return res.data;
+    } catch (error) {
+        console.log(error);
+        
+    }
 }
 
 async function deleteTicket(id:number){
-    const res = await fetch(API_URL, {
-        method: "DELETE",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({id})
-    });
+    try {
+        const res = await connection.delete(`form/${id}`);
 
-    if(!res.ok){
-        throw new Error("Error al eliminar el ticket")
-    };
+        if(!res) return;
 
-    return res.json();
+        return res.data;
+    } catch (error) {
+        console.log(error);
+        
+    }
 }
 
 async function changeTicketStatus(formId:number, status:string){
-    const res = await fetch(`${API_URL}/change-status`, {
-        method: "PATCH",
-        headers: {"Content-type": "application/json"},
-        body: JSON.stringify({formId, status})
-    });
-    console.log(res.body);
-    
-    if(!res.ok){
-        throw new Error("Error al modificar status del ticket");
-    }
+    try {
+        const res = await connection.patch('form', {formId, status});
 
-    return res.json()
+        if(!res) return;
+
+        return res.data;
+    } catch (error) {
+        console.log(error);
+        
+    }
 }
 
 export {getTickets, createTicket, addTicketComment, deleteTicket, changeTicketStatus}

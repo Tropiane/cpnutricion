@@ -18,11 +18,49 @@ class formController {
         try {
             const form = req.body;
             
-           return (await this.service.createForm(form), res.redirect("http://localhost:5173/"));
+           return (await this.service.createForm(form), res.status(201));
             
         } catch (error) {
             console.log(error);
             res.status(500).send(error);
+        }
+    }
+
+    async deleteForm(req: Request<{},{}, {id: number}>, res: Response) {
+        try {
+            const formID = req.body.id
+            return (await this.service.deleteForm(formID), res.status(200));
+        } catch (error) {
+            console.log(error);
+            res.status(500).send(error);
+        }
+    }
+
+    async updateForm(req:Request<{},{}, {id: number, comment: string}>, res:Response){
+        try {
+            const formId = req.body.id;
+            const comment = req.body.comment;
+            
+            
+            return( await this.service.updateForm(formId, comment), res.status(200).send(JSON.stringify({message: "formulario actualizado"})))
+        } catch (error) {
+            
+            console.log(error);
+            throw new Error("Error al crear el formulario")
+            
+        }   
+    }
+
+    async changeFormStatus(req:Request<{},{},{formId:number, status:string}>, res:Response){
+        try {
+            const formId = req.body.formId;
+            const status = req.body.status;
+            
+            return(await this.service.changeFormStatus(formId, status))
+        } catch (error) {
+            console.log(error);
+            throw new Error("Error al cambiar el estado del formulario")
+            
         }
     }
 }

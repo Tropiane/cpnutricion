@@ -16,7 +16,7 @@ export const Login = ()=>{
         
     }
 
-    const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>)=>{
+        const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>)=>{
         e.preventDefault()
         
         if(formData.email.length === 0){
@@ -28,7 +28,23 @@ export const Login = ()=>{
             return
         };
 
-        await login(formData);
+        const res = await login(formData);
+        if (!res) {
+            showLoginAlert("Error al iniciar sesión", "error");
+            return;
+        }
+        const { status } = res;
+        
+        if(status === 500) return showLoginAlert("error al iniciar sesion", "error");
+        
+        console.log(res);
+        
+        if(status === 200) {
+              showLoginAlert("Inicio de sesion exitoso", "success");
+              setTimeout(()=>{
+                window.location.href = "/ticket-manager";
+              }, 2000)
+        }
     }
     return(
         <div className="login">

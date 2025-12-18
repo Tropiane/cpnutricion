@@ -7,12 +7,13 @@ interface User{
 
 const login = async (data: User)=>{
     try {
-        const res = await connection.post('user/login', data);
+        const res = await connection.post<{ status: number; message: string; data: object }>('user/login', data);
 
         if(!res) return;
-        console.log(res);
         
-        return res.data
+        const {status, data: {message}} = res;
+        
+        return {status, message};
     } catch (error) {
         console.log(error);
         

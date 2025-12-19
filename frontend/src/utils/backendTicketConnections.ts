@@ -51,7 +51,7 @@ async function deleteTicket(id:number){
         const res = await connection.delete(`form/${id}`);
 
         if(!res) return;
-
+        
         return res.data;
     } catch (error) {
         console.log(error);
@@ -61,8 +61,9 @@ async function deleteTicket(id:number){
 
 async function changeTicketStatus(formId:number, status:string){
     try {
-        const res = await connection.patch('form', {formId, status});
-
+        const res = await connection.patch('form/change-status', {formId, status});
+        console.log(res);
+        
         if(!res) return;
 
         return res.data;

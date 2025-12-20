@@ -1,4 +1,4 @@
-import { connection } from "./axiosConnection";
+import { ticketConnect } from "./axiosConnection"
 
 interface Ticket{
     formId?: number,
@@ -10,66 +10,68 @@ interface Ticket{
 
 async function getTickets(): Promise<Ticket[]>{
     try {
-        const res = await connection.get('form');
+        const res = await ticketConnect.get<Ticket[]>('/', {
+        withCredentials: true,
+        })
 
-        if(!res) return([]);
-
-        return res.data as Ticket[]
+        return res.data
     } catch (error) {
-        console.log(error);
-        return [];
+        throw new Error(`Error al obtener los datos ${error}`)
     }
 }
 
 async function createTicket(ticket: Ticket): Promise<Ticket[]>{
     try {
-        const res = await connection.post('form', ticket);
-        if (!res) return([]);
+        const res = await ticketConnect.post('/', {
+        formId: ticket.formId,
+        name: ticket.name,
+        email: ticket.email,
+        phone: ticket.phone,
+        description: ticket.description
+    })
+    
+    if(!res) return []
+    
+    return res.data as Ticket[]
 
-        return res.data as Ticket[];
     } catch (error) {
-        console.log(error);
-        return[]
+        throw new Error(`Error al crear el ticket ${error}`)
     }
 }
 
 async function addTicketComment(id:number, comment: string) {
     try {
-        const res = await connection.patch('form', {id, comment});
+        const res = await ticketConnect.patch('/',{
+            comment: comment,
+            id: id
+        })
 
-        if(!res) return;
-
-        return res.data;
+        return res.data
     } catch (error) {
-        console.log(error);
-        
+        throw new Error(`Error al agregar el comentario ${error}`)
     }
 }
 
 async function deleteTicket(id:number){
     try {
-        const res = await connection.delete(`form/${id}`);
+        const res = await ticketConnect.delete(`/${id}`);
 
-        if(!res) return;
-        
-        return res.data;
+        return res.data
     } catch (error) {
-        console.log(error);
-        
+        throw new Error(`Error al eliminar el ticket ${error}`)
     }
 }
 
 async function changeTicketStatus(formId:number, status:string){
     try {
-        const res = await connection.patch('form/change-status', {formId, status});
-        console.log(res);
-        
-        if(!res) return;
+        const res = await ticketConnect.patch('/change-status',{
+            formId: formId,
+            status: status
+        });
 
-        return res.data;
+        return res.data
     } catch (error) {
-        console.log(error);
-        
+        throw new Error(`Error al cambiar el estado del ticket ${error}`)
     }
 }
 

@@ -1,24 +1,24 @@
-import { userConnect } from "./axiosConnection";
+import { userConnect } from "./axiosConnection"
+
 interface User{
     email: string,
     password: string
-};
+}
 
 const login = async (data: User)=>{
     try {
-        const res = await userConnect.post('/login',{
-            email: data.email,
-            password: data.password
-        })
+        const res = await userConnect.post<{ status: number; message: string; data: object }>('/', data);
+
+        if(!res) return;
         
-        return res.data
+        const {status, data: {message}} = res;
+        
+        return {status, message};
     } catch (error) {
         console.log(error);
-        return 500
+        
     }
 }
-
-
 
 export {
     login

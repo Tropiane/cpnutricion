@@ -1,9 +1,9 @@
-import type { targetData } from "./PlanTarget"
+import type { TargetData } from "./PlanTarget"
 
 import TargetCarousel from "./hooks/TargetCarousel"
 import { PlanTarget } from "./PlanTarget"
 
-const planes: targetData[] = [
+const planes: TargetData[] = [
     {
         id: 1,
         title: "Plan Bienvenida — “Comenzar sin culpa”",

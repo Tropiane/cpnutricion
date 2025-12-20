@@ -1,6 +1,6 @@
 import axios from 'axios';
 
 export const connection = axios.create({
-    baseURL: 'http://localhost:3000/api/',
+    baseURL: import.meta.env.API_URL || import.meta.env.API_URL_DEV,
     withCredentials: true
 })

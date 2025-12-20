@@ -3,21 +3,16 @@ import { RxHamburgerMenu } from "react-icons/rx";
 const links = [
     {
         id: 1,
-        url: "/",
-        text: "Inicio",
-    },
-    {
-        id: 2,
         url: "#about",
         text: "Sobre Mi",
     },
     {
-        id: 3,
+        id: 2,
         url: "#footer",
         text: "Contacto",
     },
     {
-        id:4,
+        id:3,
         url: "/login",
         text: "Acceso de Admin",
     }
@@ -65,7 +60,7 @@ export const NavBar = ({isFooter} : {isFooter?: boolean})=>{
                 {
                     links.map((link) => (
                         <li key={link.id}>
-                            <a href={link.url} className="lato-bold-italic">{link.text}</a>
+                            <a href={link.url} className="lato-bold-italic font-bold">{link.text}</a>
                         </li>
                     ))
                 }

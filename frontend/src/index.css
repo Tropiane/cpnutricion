@@ -453,7 +453,7 @@ body {
     flex-direction: column;
     color: #444444;
     padding: 1rem;
-    height: 50%;
+    height: max-content;
     margin-top: 1rem;
     border-top: 1px solid #444444;
   }
@@ -735,29 +735,21 @@ body {
     width: 100dvw;
   }
   main .aboutMe {
-    gap: 1.5rem;
-    padding: 1rem;
+    padding: 1.5rem;
     box-shadow: 0 -2px 52px #A8D5BA;
   }
   main .aboutMe h2 {
     text-align: center;
   }
   main .aboutMe img {
-    width: 60%;
+    width: 40%;
     border-radius: 1rem;
     justify-self: start;
   }
   main .aboutMe p {
     text-align: center;
-    padding: 1rem;
     border-bottom: 1px solid #444444;
-    justify-self: center;
     align-self: self-start;
-  }
-  main .aboutMe ul {
-    align-self: flex-start;
-    margin: 0;
-    padding: 0;
   }
   main .aboutMe ul li {
     list-style: none;

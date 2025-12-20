@@ -18,12 +18,12 @@ const Home = () => {
         
            <div className="aboutMe" id="about">
                 <img src="https://images.unsplash.com/photo-1618842688917-0540b01cb7fc?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mujer desayunando" />
-                <h2 className="nunito-bold-italic">{aboutMeData[0].title}</h2>
-                <p className="lato-regular">{aboutMeData[0].text}</p>
+                <h2 className="nunito-bold-italic text-2xl">{aboutMeData[0].title}</h2>
+                <p className="lato-regular text-xl">{aboutMeData[0].text}</p>
                 <ul>
-                    {aboutMeData[0].details.map((detail) => <li className="lato-regular">{detail}</li>)}
+                    {aboutMeData[0].details.map((detail) => <li className="lato-regular text-xl">{detail}</li>)}
                 </ul>
-                <h3 className="nunito-bold-italic">{aboutMeData[0].secondTitle}</h3>
+                <h3 className="nunito-bold-italic text-xl">{aboutMeData[0].secondTitle}</h3>
             </div>
 
             <Features />

@@ -10,7 +10,7 @@ interface Ticket{
 
 async function getTickets(): Promise<Ticket[]>{
     try {
-        const res = await connection.get('form');
+        const res = await connection.get('/api/form');
 
         if(!res) return([]);
 
@@ -23,7 +23,7 @@ async function getTickets(): Promise<Ticket[]>{
 
 async function createTicket(ticket: Ticket): Promise<Ticket[]>{
     try {
-        const res = await connection.post('form', ticket);
+        const res = await connection.post('/api/form', ticket);
         if (!res) return([]);
 
         return res.data as Ticket[];
@@ -35,7 +35,7 @@ async function createTicket(ticket: Ticket): Promise<Ticket[]>{
 
 async function addTicketComment(id:number, comment: string) {
     try {
-        const res = await connection.patch('form', {id, comment});
+        const res = await connection.patch('/api/form', {id, comment});
 
         if(!res) return;
 
@@ -48,7 +48,7 @@ async function addTicketComment(id:number, comment: string) {
 
 async function deleteTicket(id:number){
     try {
-        const res = await connection.delete(`form/${id}`);
+        const res = await connection.delete(`/api/form/${id}`);
 
         if(!res) return;
         
@@ -61,7 +61,7 @@ async function deleteTicket(id:number){
 
 async function changeTicketStatus(formId:number, status:string){
     try {
-        const res = await connection.patch('form/change-status', {formId, status});
+        const res = await connection.patch('/api/form/change-status', {formId, status});
         console.log(res);
         
         if(!res) return;

@@ -14,7 +14,7 @@ async function getTickets(): Promise<Ticket[]>{
         withCredentials: true,
         })
 
-        return res.data
+        return res.data as Ticket[]
     } catch (error) {
         throw new Error(`Error al obtener los datos ${error}`)
     }
@@ -30,7 +30,7 @@ async function createTicket(ticket: Ticket): Promise<Ticket[]>{
         description: ticket.description
     })
     
-    return res.data
+        return res.data as Ticket[]
 
     } catch (error) {
         throw new Error(`Error al crear el ticket ${error}`)
@@ -52,11 +52,7 @@ async function addTicketComment(id:number, comment: string) {
 
 async function deleteTicket(id:number){
     try {
-        const res = await ticketConnect.delete(`/${id}`,{
-            data: {
-                id: id
-            }
-        })
+        const res = await ticketConnect.delete(`/${id}`)
 
         return res.data
     } catch (error) {

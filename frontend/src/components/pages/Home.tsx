@@ -1,4 +1,4 @@
-import { Features } from "../layouts/Features"
+import { Features } from "../../layouts/Features"
 
 const aboutMeData = [
     {

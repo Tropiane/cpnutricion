@@ -1,4 +1,4 @@
-import { ticketConnect } from "./axiosConnection"
+import { ticketConnect } from "./axios.connection";
 
 interface Ticket{
     formId?: number,
@@ -30,9 +30,7 @@ async function createTicket(ticket: Ticket): Promise<Ticket[]>{
         description: ticket.description
     })
     
-    if(!res) return []
-    
-    return res.data as Ticket[]
+    return res.data
 
     } catch (error) {
         throw new Error(`Error al crear el ticket ${error}`)
@@ -54,7 +52,11 @@ async function addTicketComment(id:number, comment: string) {
 
 async function deleteTicket(id:number){
     try {
-        const res = await ticketConnect.delete(`/${id}`);
+        const res = await ticketConnect.delete(`/${id}`,{
+            data: {
+                id: id
+            }
+        })
 
         return res.data
     } catch (error) {

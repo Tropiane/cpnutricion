@@ -1,5 +1,5 @@
-import { useTickets } from "../components/hooks/useTickets";
-import { TicketTarget } from "../components/TicketTarget";
+import { useTickets } from "../useTickets";
+import { TicketTarget } from "../tickets/TicketTarget";
 
 export const TicketsManager = () => {
   const {data, closedTickets, inProgressTickets, pendingTickets} = useTickets()
